@@ -1,0 +1,285 @@
+html {
+    scroll-behavior: smooth;
+}
+/* Estilos gerais */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+/* Estilos do cabeçalho */
+header {
+    background-image: url('Imagens/SilkSoulDemoCapa.png');
+    background-color: #7b7b7b;
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 400px; /* Altura desejada do cabeçalho */
+    color: #d7d7d7;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; 
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size: 3.5rem;
+}
+
+.post {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 20px;
+}
+.post-content {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 50px;
+    background-color: black;
+    border-radius: 10px;
+    
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 1200px; /* Ajuste conforme necessário */
+}
+.post-content:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgb(117, 117, 188);
+}
+.post-content h3{
+    color:#d7d7d7;
+    font-size: 50px;
+    margin-top: 0;
+}
+.post-content p{
+    font-size: 18px;
+}
+.post-content.left{
+    flex-direction: row;
+}
+.post-content.right{
+    flex-direction: row-reverse;
+    text-align: left;
+}
+.post-content img {
+    max-width: 600px;
+    margin-right: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.post-content:hover .post-content img{
+    transform: scale(1.1);
+}
+
+
+/*Estilos de introdução*/
+.intro {
+    text-align: center;
+    margin: 40px 0;
+}
+.intro h1 {
+    color: #d7d7d7;
+    font-size: 3.0rem;
+}
+.intro p{
+    color: rgba(192, 183, 132, 0.928);
+    font-size: 18px;
+}
+
+/*Estilos de avisos*/
+.aviso{
+    text-align: center;
+    margin: 40px 0;
+}
+.aviso h2{
+    color: rgb(149, 35, 35);
+    font-size: 2.0rem;
+}
+
+/*Estilos de referência*/
+.reference-content{
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reference-content .btn{
+    background-color: rgb(69, 187, 173);;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.4s;
+    transition: color 0.5s;
+    margin-top: 100px;
+}
+.reference-content .btn:hover{
+    background-color: rgb(40, 110, 102);
+    color: white;
+}
+.reference-content video{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.reference-content video:hover{
+    box-shadow: 0 0 20px rgb(117, 117, 188);
+}
+
+/*estilos do parallax*/
+.parallax-container {
+    position: relative;
+    height: 500px; /* Ajuste conforme necessário */
+    overflow: hidden;/* Mantenha isso para evitar o overflow da imagem */
+}
+
+.parallax {
+    background-image: url('Imagens/SilkSoulDemoCapa.png');
+    height: 200%; /* Maior que o container para criar o efeito de revelação */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo está acima da imagem de fundo */
+}
+
+/* Estilos sociais */
+.social {
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    z-index: 1; /* Garante que os ícones sociais estejam acima do conteúdo do rodapé */
+}
+.social a {
+    display: inline-block;
+    margin-left: 30px;
+}
+.social a img {
+    width: 50px;
+    height: 50px;;
+    transition: transform 0.3s;
+}
+.social a img:hover {
+    transform: scale(1.1);
+}
+/*estilos do rodapé*/
+footer {
+    background-color: #1d1d1d;
+    color: #d7d7d7;
+    text-align: center;
+    padding: 50px 0; /* Aumentei o padding para mais espaço no rodapé */
+    position: relative;
+}
+.footer-content {
+    max-width: 1200px; /* Defini um máximo de largura para o conteúdo do rodapé */
+    margin: 0 auto; /* Centraliza o conteúdo na página */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-content img{
+    max-width: 600px;
+    max-height: 300px;
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 150px;
+}
+.footer-copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto; /* Centraliza horizontalmente */
+}
+
+
+/* Media Queries */
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .post-content {
+        padding: 20px;
+    }
+    .post-content img {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .intro h1 {
+        font-size: 2rem;
+    }
+    .intro p {
+        font-size: 16px;
+    }
+    footer {
+        padding: 100px 0; /* Reduz o padding do rodapé em telas pequenas */
+    }
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .post-content {
+        padding: 30px;
+    }
+    .post-content img {
+        max-width: 80%;
+        margin-right: 10px;
+    }
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+    .intro p {
+        font-size: 17px;
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 901px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+    .post-content {
+        padding: 50px;
+    }
+    .post-content img {
+        max-width: 600px;
+    }
+    .intro h1 {
+        font-size: 3rem;
+    }
+    .intro p {
+        font-size: 18px;
+    }
+}
+
+
+
